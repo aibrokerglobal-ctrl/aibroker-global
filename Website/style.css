@@ -302,4 +302,143 @@ footer {
     font-size: 14px;
     padding-top: 20px;
     border-top: 1px solid #334155;
+}/* ====== Pricing Section ====== */
+.pricing {
+    padding: 80px 50px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.pricing h2 {
+    font-size: 32px;
+    color: #1a365d;
+    margin-bottom: 50px;
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.pricing-card.featured {
+    border-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.pricing-card h3 {
+    color: #1a365d;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 48px;
+    color: #2563eb;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.price span {
+    font-size: 16px;
+    color: #718096;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-card ul li {
+    padding: 10px 0;
+    color: #4a5568;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* ====== Contact Section ====== */
+.contact {
+    padding: 80px 50px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 32px;
+    color: #1a365d;
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.contact-info h3 {
+    color: #1a365d;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 16px;
 }
