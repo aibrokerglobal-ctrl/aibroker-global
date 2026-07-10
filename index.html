@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Broker Global | حلول الذكاء الاصطناعي للأعمال</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -17,57 +16,17 @@
             --light: #f8fafc;
             --gray: #64748b;
             --gradient: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
-            --gradient-2: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Cairo', sans-serif;
             background: var(--darker);
             color: var(--light);
             line-height: 1.8;
-            overflow-x: hidden;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
-            50% { box-shadow: 0 0 0 20px rgba(99, 102, 241, 0); }
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .animate {
-            animation: fadeInUp 0.8s ease forwards;
-            opacity: 0;
-        }
-
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        .delay-5 { animation-delay: 0.5s; }
-
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -77,9 +36,8 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(2, 6, 23, 0.8);
+            background: rgba(2, 6, 23, 0.9);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
         }
 
         .logo {
@@ -88,7 +46,6 @@
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .nav-links {
@@ -101,28 +58,10 @@
             color: var(--gray);
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
-            position: relative;
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: var(--primary); }
 
         .cta-nav {
             background: var(--gradient);
@@ -131,9 +70,6 @@
             border-radius: 50px;
         }
 
-        .cta-nav::after { display: none !important; }
-
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -141,49 +77,6 @@
             justify-content: center;
             text-align: center;
             padding: 8rem 5% 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite reverse;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
         }
 
         .hero h1 {
@@ -197,7 +90,6 @@
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero p {
@@ -207,13 +99,6 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         .btn {
@@ -226,12 +111,13 @@
             border: none;
             cursor: pointer;
             font-family: 'Cairo', sans-serif;
+            display: inline-block;
+            margin: 0.5rem;
         }
 
         .btn-primary {
             background: var(--gradient);
             color: white;
-            animation: pulse 2s infinite;
         }
 
         .btn-primary:hover {
@@ -245,38 +131,6 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* Stats */
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin-top: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* Section Styles */
         section {
             padding: 6rem 5%;
         }
@@ -305,14 +159,13 @@
             margin: 0 auto;
         }
 
-        /* Services */
         .services {
             background: var(--dark);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -324,24 +177,6 @@
             border-radius: 20px;
             padding: 2.5rem;
             transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.4s;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
         }
 
         .service-card:hover {
@@ -363,7 +198,7 @@
         }
 
         .service-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
@@ -371,6 +206,7 @@
         .service-card p {
             color: var(--gray);
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .service-features {
@@ -378,11 +214,12 @@
         }
 
         .service-features li {
-            padding: 0.5rem 0;
+            padding: 0.4rem 0;
             color: var(--gray);
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.9rem;
         }
 
         .service-features li::before {
@@ -398,7 +235,7 @@
         }
 
         .price-tag {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: var(--accent);
         }
@@ -406,11 +243,6 @@
         .price-note {
             color: var(--gray);
             font-size: 0.85rem;
-        }
-
-        /* How It Works */
-        .process {
-            background: var(--darker);
         }
 
         .process-steps {
@@ -427,7 +259,6 @@
             min-width: 250px;
             text-align: center;
             padding: 2rem;
-            position: relative;
         }
 
         .step-number {
@@ -441,22 +272,6 @@
             font-size: 1.5rem;
             font-weight: 800;
             margin: 0 auto 1.5rem;
-            position: relative;
-        }
-
-        .step h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .step p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        /* Case Studies */
-        .cases {
-            background: var(--dark);
         }
 
         .cases-grid {
@@ -501,6 +316,7 @@
         .case-result {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .result-item {
@@ -512,11 +328,6 @@
 
         .result-item strong {
             color: var(--secondary);
-        }
-
-        /* FAQ */
-        .faq {
-            background: var(--darker);
         }
 
         .faq-list {
@@ -568,43 +379,18 @@
             max-height: 200px;
         }
 
-        /* Contact */
-        .contact {
-            background: var(--dark);
-            text-align: center;
-        }
-
         .contact-box {
             background: var(--gradient);
             border-radius: 30px;
             padding: 4rem 2rem;
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            text-align: center;
         }
 
         .contact-box h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .contact-box p {
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            position: relative;
         }
 
         .contact-form {
@@ -612,8 +398,7 @@
             flex-direction: column;
             gap: 1rem;
             max-width: 500px;
-            margin: 0 auto;
-            position: relative;
+            margin: 2rem auto 0;
         }
 
         .contact-form input,
@@ -634,15 +419,6 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
-        .contact-form select {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .contact-form select option {
-            background: var(--dark);
-            color: var(--light);
-        }
-
         .contact-form textarea {
             min-height: 120px;
             resize: vertical;
@@ -658,27 +434,8 @@
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
         }
 
-        .contact-form button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .payment-note {
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .payment-note img {
-            height: 30px;
-            margin: 0 5px;
-            vertical-align: middle;
-        }
-
-        /* Footer */
         footer {
             background: var(--darker);
             padding: 3rem 5%;
@@ -695,119 +452,22 @@
             margin-bottom: 1rem;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(99, 102, 241, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-
-        .social-links a:hover {
-            background: var(--gradient);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Menu */
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--light);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                width: 100%;
-                background: var(--darker);
-                flex-direction: column;
-                padding: 1rem;
-                gap: 1rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .stats {
-                gap: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-steps {
-                flex-direction: column;
-            }
-        }
-
-        /* Scroll animations */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; }
+            .cases-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="logo">AI Broker Global</div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -820,49 +480,24 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="badge animate">🚀 نقدم حلول الذكاء الاصطناعي للأعمال</div>
-            <h1 class="animate delay-1">
-                حوّل عملك مع<br>
-                <span>الذكاء الاصطناعي</span>
-            </h1>
-            <p class="animate delay-2">
-                نبني لك أنظمة ذكية تُشغّل أعمالك تلقائياً — من أتمتة العمليات إلى المحتوى التسويقي والشات بوتات الذكية
-            </p>
-            <div class="hero-buttons animate delay-3">
-                <a href="#contact" class="btn btn-primary">ابدأ مشروعك الآن</a>
-                <a href="#services" class="btn btn-secondary">اكتشف خدماتنا</a>
-            </div>
-            <div class="stats animate delay-4">
-                <div class="stat-item">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">خدمات أساسية</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24h</div>
-                    <div class="stat-label">وقت التنفيذ</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">ذكاء اصطناعي</div>
-                </div>
-            </div>
+        <div>
+            <h1>حوّل عملك مع<br><span>الذكاء الاصطناعي</span></h1>
+            <p>نبني لك أنظمة ذكية تُشغّل أعمالك تلقائياً</p>
+            <a href="#contact" class="btn btn-primary">ابدأ مشروعك الآن</a>
+            <a href="#services" class="btn btn-secondary">اكتشف خدماتنا</a>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
-        <div class="section-header scroll-reveal">
+        <div class="section-header">
             <h2>خدماتنا <span>الأساسية</span></h2>
-            <p>ثلاث خدمات قوية نبدأ بها رحلتك نحو التحول الرقمي بالذكاء الاصطناعي</p>
+            <p>خدمات قوية نبدأ بها رحلتك نحو التحول الرقمي بالذكاء الاصطناعي</p>
         </div>
         <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card scroll-reveal">
+            <div class="service-card">
                 <div class="service-icon">⚙️</div>
-                <h3>أتمتة الأعمال بالذكاء الاصطناعي</h3>
+                <h3>إجعل الذكاء الاصطناعي يعمل بدلاً عنك</h3>
                 <p>أنظمة ذكية تُشغّل عملك تلقائياً — ردود العملاء، التقارير، المتابعة، وربط النماذج بالإيميل والجداول.</p>
                 <ul class="service-features">
                     <li>تنظيم ردود العملاء تلقائياً</li>
@@ -872,13 +507,12 @@
                     <li>تكامل مع Google Workspace</li>
                 </ul>
                 <div class="service-price">
-                    <div class="price-tag">$500 - $2,000</div>
+                    <div class="price-tag">$150 - $500</div>
                     <div class="price-note">حسب تعقيد النظام</div>
                 </div>
             </div>
 
-            <!-- Service 2 -->
-            <div class="service-card scroll-reveal">
+            <div class="service-card">
                 <div class="service-icon">📝</div>
                 <h3>المحتوى والتسويق الذكي</h3>
                 <p>محتوى تسويقي احترافي يُنتج بالذكاء الاصطناعي ويُراجع بخبرة بشرية — منشورات، مقالات، خطط تسويقية.</p>
@@ -890,13 +524,12 @@
                     <li>أفكار حملات تسويقية مبتكرة</li>
                 </ul>
                 <div class="service-price">
-                    <div class="price-tag">$200 - $1,000</div>
+                    <div class="price-tag">$50 - $300</div>
                     <div class="price-note">حسب حجم المحتوى</div>
                 </div>
             </div>
 
-            <!-- Service 3 -->
-            <div class="service-card scroll-reveal">
+            <div class="service-card">
                 <div class="service-icon">🤖</div>
                 <h3>شات بوتات ذكية للشركات</h3>
                 <p>بوتات ذكية ترد على عملائك 24/7 — مخصصة لنشاطك التجاري وتتعلم مع كل محادثة.</p>
@@ -908,77 +541,160 @@
                     <li>تحديث مستمر للبوت</li>
                 </ul>
                 <div class="service-price">
-                    <div class="price-tag">$300 - $1,500</div>
+                    <div class="price-tag">$100 - $400</div>
                     <div class="price-note">حسب عدد المستخدمين</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>تصميم الصور والفيديوهات</h3>
+                <p>صور وفيديوهات إعلانية احترافية باستخدام أدوات الذكاء الاصطناعي المتقدمة.</p>
+                <ul class="service-features">
+                    <li>صور منتجات احترافية</li>
+                    <li>فيديوهات إعلانية قصيرة</li>
+                    <li>تصميمات سوشيال ميديا</li>
+                    <li>عروض تقديمية للشركات</li>
+                    <li>تصميم هوية بصرية</li>
+                </ul>
+                <div class="service-price">
+                    <div class="price-tag">$30 - $200</div>
+                    <div class="price-note">حسب عدد التصميمات</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3>السيرة الذاتية والمستندات</h3>
+                <p>إعداد سير ذاتية احترافية ومستندات عمل بشكل متقن وسريع.</p>
+                <ul class="service-features">
+                    <li>سيرة ذاتية احترافية (CV)</li>
+                    <li>خطابات تغطية (Cover Letter)</li>
+                    <li>ملفات تعريف الشركات</li>
+                    <li>عروض للمستثمرين</li>
+                    <li>ترجمة احترافية للمستندات</li>
+                </ul>
+                <div class="service-price">
+                    <div class="price-tag">$25 - $150</div>
+                    <div class="price-note">حسب نوع المستند</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>صياغة العقود والشراكات</h3>
+                <p>صياغة عقود تأسيس شركات واتفاقيات شراكة بشكل قانوني دقيق.</p>
+                <ul class="service-features">
+                    <li>عقود تأسيس الشركات</li>
+                    <li>اتفاقيات الشراكة التجارية</li>
+                    <li>عقود العمل والتوظيف</li>
+                    <li>اتفاقيات عدم الإفصاح (NDA)</li>
+                    <li>مراجعة قانونية للعقود</li>
+                </ul>
+                <div class="service-price">
+                    <div class="price-tag">$50 - $250</div>
+                    <div class="price-note">حسب تعقيد العقد</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📅</div>
+                <h3>إدارة المواعيد للمراكز الصحية</h3>
+                <p>نظام حجوزات تلقائي للمستشفيات والمراكز الصحية والخدمية.</p>
+                <ul class="service-features">
+                    <li>حجوزات تلقائية 24/7</li>
+                    <li>تذكير للمرضى بالمواعيد</li>
+                    <li>إدارة جدول الأطباء</li>
+                    <li>تقارير يومية للحجوزات</li>
+                    <li>ربط بالتقويم الإلكتروني</li>
+                </ul>
+                <div class="service-price">
+                    <div class="price-tag">$200 - $600</div>
+                    <div class="price-note">حسب حجم المركز</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>استشارات إدارة الأعمال</h3>
+                <p>خطط استراتيجية واستشارات لتحسين أداء شركتك وزيادة أرباحك.</p>
+                <ul class="service-features">
+                    <li>تحليل SWOT للشركة</li>
+                    <li>خطة تسويقية شاملة</li>
+                    <li>دراسة جدوى للمشاريع</li>
+                    <li>تحسين عمليات العمل</li>
+                    <li>تقارير تحليلية شهرية</li>
+                </ul>
+                <div class="service-price">
+                    <div class="price-tag">$100 - $500</div>
+                    <div class="price-note">حسب نطاق الاستشارة</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="process" id="process">
-        <div class="section-header scroll-reveal">
+    <section id="process">
+        <div class="section-header">
             <h2>كيف <span>نعمل</span></h2>
             <p>عملية بسيطة وشفافة من الطلب إلى التسليم</p>
         </div>
         <div class="process-steps">
-            <div class="step scroll-reveal">
+            <div class="step">
                 <div class="step-number">1</div>
                 <h3>اطلب الخدمة</h3>
-                <p>املأ النموذج واختر الخدمة المناسبة لك. سنراجع طلبك خلال 24 ساعة.</p>
+                <p>املأ النموذج واشرح احتياجك بدقة. نحن نبحث عن أفضل حلول لمعالجة مشاكلك.</p>
             </div>
-            <div class="step scroll-reveal">
+            <div class="step">
                 <div class="step-number">2</div>
-                <h3>نناقش التفاصيل</h3>
-                <p>نتحدث عن احتياجاتك بدقة ونحدد النطاق والجدول الزمني والسعر النهائي.</p>
+                <h3>نقدم الحلول</h3>
+                <p>نحلل طلبك ونقدم الحلول المناسبة في جدول زمني قريب جداً.</p>
             </div>
-            <div class="step scroll-reveal">
+            <div class="step">
                 <div class="step-number">3</div>
                 <h3>ننفذ ونسلم</h3>
-                <p>نبني حلك بالذكاء الاصطناعي، نراجعه معك، ونسلمه جاهزاً للعمل.</p>
+                <p>نبدأ التنفيذ فوراً ونسلم العمل في أسرع وقت ممكن.</p>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies -->
-    <section class="cases" id="cases">
-        <div class="section-header scroll-reveal">
-            <h2>نماذج <span>أعمالنا</span></h2>
-            <p>نتائج حقيقية حققناها لعملائنا باستخدام الذكاء الاصطناعي</p>
+    <section class="cases" id="cases" style="background: var(--dark);">
+        <div class="section-header">
+            <h2>نتائج <span>حقيقية</span></h2>
+            <p>إنجازات فاخرة حققناها لعملائنا باستخدام الذكاء الاصطناعي</p>
         </div>
         <div class="cases-grid">
-            <div class="case-card scroll-reveal">
+            <div class="case-card">
                 <div class="case-header">
-                    <h4>🏪 متجر إلكتروني</h4>
+                    <h4>🛒 متجر إلكتروني</h4>
                 </div>
                 <div class="case-body">
-                    <p>أتمتة نظام ردود العملاء وإنشاء بوت ذكي للأسئلة المتكررة</p>
+                    <p>أنشأنا متجراً إلكترونياً كاملاً مع أنظمة ردود فورية على العملاء وبوتات ذكية</p>
                     <div class="case-result">
                         <div class="result-item"><strong>80%</strong> تقليل وقت الرد</div>
                         <div class="result-item"><strong>3x</strong> زيادة المبيعات</div>
                     </div>
                 </div>
             </div>
-            <div class="case-card scroll-reveal">
+            <div class="case-card">
                 <div class="case-header">
-                    <h4>📱 وكالة تسويق</h4>
+                    <h4>🏢 وكلاء شركات كبرى</h4>
                 </div>
                 <div class="case-body">
-                    <p>إنتاج 30 منشوراً أسبوعياً باستخدام AI + خطة محتوى شهرية</p>
+                    <p>ندير صفحات وردود يومياً لشركات ذات قواعد عملاء كبيرة باستخدام AI</p>
                     <div class="case-result">
                         <div class="result-item"><strong>50%</strong> توفير الوقت</div>
-                        <div class="result-item"><strong>2x</strong> تفاعل أكثر</div>
+                        <div class="result-item"><strong>10x</strong> زيادة التفاعلات</div>
                     </div>
                 </div>
             </div>
-            <div class="case-card scroll-reveal">
+            <div class="case-card">
                 <div class="case-header">
-                    <h4>🏥 عيادة طبية</h4>
+                    <h4>🏥 إدارة المشاريع</h4>
                 </div>
                 <div class="case-body">
-                    <p>نظام حجز تلقائي + بوت للأسئلة الأولية + تقارير يومية</p>
+                    <p>نحن ندير المشاريع نيابة عنك — نظام حجوزات تلقائي + بوت للأسئلة الأولية + تقارير يومية</p>
                     <div class="case-result">
-                        <div class="result-item"><strong>90%</strong> أتمتة الحجوزات</div>
+                        <div class="result-item"><strong>90%</strong> زيادة الحجوزات</div>
                         <div class="result-item"><strong>60%</strong> تقليل الاتصالات</div>
                     </div>
                 </div>
@@ -986,23 +702,22 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq" id="faq">
-        <div class="section-header scroll-reveal">
+        <div class="section-header">
             <h2>الأسئلة <span>الشائعة</span></h2>
             <p>إجابات على أكثر الأسئلة التي تهمك</p>
         </div>
         <div class="faq-list">
-            <div class="faq-item scroll-reveal">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>كم يستغرق تنفيذ الخدمة؟</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    تعتمد على الخدمة: المحتوى التسويقي من 1-3 أيام، الأتمتة من 2-5 أيام، والشات بوت من 2-4 أيام. نحدد الجدول الزمني بدقة قبل البدء.
+                    وقت التنفيذ يعتمد على الخدمة المطلوبة من عملائنا، ونحن نعمل طوال الوقت على تنفيذ الخدمة المطلوبة بأفضل شكل وفي أسرع وقت.
                 </div>
             </div>
-            <div class="faq-item scroll-reveal">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>هل المحتوى مكتوب بالذكاء الاصطناعي فقط؟</span>
                     <span class="faq-icon">+</span>
@@ -1011,25 +726,16 @@
                     نستخدم AI لإنتاج المحتوى الأولي ثم نراجعه ونحسنه يدوياً لضمان الجودة والدقة والتناسب مع هوية علامتك التجارية.
                 </div>
             </div>
-            <div class="faq-item scroll-reveal">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>ما طرق الدفع المتاحة؟</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    ندعم الدفع عبر Zain Cash، PayPal، والتحويل البنكي. الدفع يكون على مرحلتين: 50% مقدم و50% عند التسليم.
+                    ندعم الدفع عبر PayPal، Zain Cash، والتحويل البنكي وروابط الدفع.
                 </div>
             </div>
-            <div class="faq-item scroll-reveal">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>هل يمكن تعديل النتيجة بعد التسليم؟</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    نعم! نقدم جولتين من التعديلات المجانية بعد التسليم. هدفنا رضاك التام عن النتيجة النهائية.
-                </div>
-            </div>
-            <div class="faq-item scroll-reveal">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>هل البيانات آمنة؟</span>
                     <span class="faq-icon">+</span>
@@ -1041,9 +747,8 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="contact-box scroll-reveal">
+        <div class="contact-box">
             <h2>ابدأ مشروعك الآن</h2>
             <p>املأ النموذج وسنتواصل معك خلال 24 ساعة</p>
             <form class="contact-form" onsubmit="handleSubmit(event)">
@@ -1052,105 +757,56 @@
                 <input type="text" placeholder="اسم الشركة (اختياري)">
                 <select required>
                     <option value="">اختر الخدمة المطلوبة</option>
-                    <option value="automation">أتمتة الأعمال بالذكاء الاصطناعي</option>
+                    <option value="automation">إجعل الذكاء الاصطناعي يعمل بدلاً عنك</option>
                     <option value="content">المحتوى والتسويق الذكي</option>
                     <option value="chatbot">شات بوتات ذكية</option>
+                    <option value="design">تصميم الصور والفيديوهات</option>
+                    <option value="cv">السيرة الذاتية والمستندات</option>
+                    <option value="contracts">صياغة العقود والشراكات</option>
+                    <option value="medical">إدارة المواعيد للمراكز الصحية</option>
+                    <option value="consulting">استشارات إدارة الأعمال</option>
                     <option value="other">خدمة أخرى / استشارة</option>
                 </select>
-                <textarea placeholder="صف احتياجاتك باختصار..."></textarea>
+                <textarea placeholder="اشرح احتياجك بدقة..."></textarea>
                 <button type="submit">إرسال الطلب</button>
             </form>
-            <div class="payment-note">
-                💳 الدفع عبر Zain Cash | PayPal | تحويل بنكي
-            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
+                💳 ندعم الدفع عبر PayPal، Zain Cash، والتحويل البنكي وروابط الدفع
+            </p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-logo">AI Broker Global</div>
         <p style="color: var(--gray); margin-bottom: 1rem;">حلول الذكاء الاصطناعي للأعمال</p>
-        <div class="footer-links">
-            <a href="#services">الخدمات</a>
-            <a href="#process">كيف نعمل</a>
-            <a href="#cases">أعمالنا</a>
-            <a href="#faq">الأسئلة</a>
-            <a href="#contact">تواصل معنا</a>
-        </div>
-        <div class="social-links">
-            <a href="#" title="WhatsApp">📱</a>
-            <a href="#" title="LinkedIn">💼</a>
-            <a href="#" title="Twitter/X">𝕏</a>
-            <a href="#" title="Email">✉️</a>
-        </div>
-        <div class="copyright">
+        <div style="color: var(--gray); font-size: 0.9rem;">
             © 2026 AI Broker Global. جميع الحقوق محفوظة.
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        // FAQ Toggle
         function toggleFaq(element) {
             const item = element.parentElement;
             const isActive = item.classList.contains('active');
-
-            // Close all
             document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-
-            // Open clicked if wasn't active
-            if (!isActive) {
-                item.classList.add('active');
-            }
+            if (!isActive) item.classList.add('active');
         }
 
-        // Scroll Reveal
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    document.getElementById('navLinks').classList.remove('active');
-                }
-            });
-        });
-
-        // Form Submit
         function handleSubmit(e) {
             e.preventDefault();
-            alert('تم استلام طلبك! سنتواصل معك خلال 24 ساعة.\n\nللدفع السريع عبر Zain Cash: [رقمك هنا]');
+            alert('تم استلام طلبك! سنتواصل معك خلال 24 ساعة.');
             e.target.reset();
         }
 
-        // Navbar Background on Scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(2, 6, 23, 0.95)';
-            } else {
-                nav.style.background = 'rgba(2, 6, 23, 0.8)';
-            }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
         });
     </script>
 </body>
