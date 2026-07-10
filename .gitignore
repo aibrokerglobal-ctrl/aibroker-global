@@ -1,2 +1,11 @@
+# Temporary files
 *.tmp
+~$*
+
+# Word temporary files
+*.docx~
 ~$*.docx
+
+# OS files
+.DS_Store
+Thumbs.db
